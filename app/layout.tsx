@@ -1,14 +1,11 @@
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import theme from "./theme";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export const metadata: Metadata = {
-  title: "EatWhat.app",
-  description: "Group meal planning web app 🍽️",
+  title: "Eat what?",
+  description: "Let's gather energy together.",
 };
 
 export default function RootLayout({
@@ -18,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <AppRouterCacheProvider>
           <CssVarsProvider theme={theme}>{children}</CssVarsProvider>
         </AppRouterCacheProvider>
