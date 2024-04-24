@@ -1,3 +1,10 @@
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
@@ -14,12 +21,25 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <AppRouterCacheProvider>
-          <CssVarsProvider theme={theme}>{children}</CssVarsProvider>
-        </AppRouterCacheProvider>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body>
+          <header>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </header>
+
+          <AppRouterCacheProvider>
+            <CssVarsProvider theme={theme}>
+              <main>{children}</main>
+            </CssVarsProvider>
+          </AppRouterCacheProvider>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
