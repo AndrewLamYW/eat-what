@@ -1,10 +1,8 @@
 "use client";
 
-import { SignedIn, SignedOut } from "@clerk/nextjs";
 import Box from "@mui/material/Box";
-import Container from "@mui/material/Container";
-import Typography from "@mui/material/Typography";
-import MainSignInButton from "./components/main-sign-in-button";
+import AuthenticatedHome from "./page-authenticated";
+import UnauthenticatedHome from "./page-unauthenticated";
 
 export default function Home() {
   return (
@@ -15,23 +13,8 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      <SignedOut>
-        <Container>
-          <Typography variant="h1" gutterBottom>
-            <b>EatWhat?</b>
-          </Typography>
-
-          <Typography variant="h2" gutterBottom>
-            What are we eating?
-          </Typography>
-
-          <Box>
-            <MainSignInButton buttonProps={{ variant: "contained" }} />
-          </Box>
-        </Container>
-      </SignedOut>
-
-      <SignedIn>Plan a group meal</SignedIn>
+      <AuthenticatedHome />
+      <UnauthenticatedHome />
     </Box>
   );
 }
