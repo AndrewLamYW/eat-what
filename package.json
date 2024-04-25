@@ -9,13 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^5.0.1",
-    "@emotion/cache": "^11.11.0",
-    "@emotion/react": "^11.11.4",
-    "@emotion/styled": "^11.11.5",
-    "@mui/material": "^6.0.0-alpha.3",
-    "@mui/material-nextjs": "^6.0.0-alpha.0",
-    "next": "14.2.2",
+    "@clerk/nextjs": "^5",
+    "@emotion/cache": "^11",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "@mui/material": "6.0.0-alpha.4",
+    "@mui/material-nextjs": "6.0.0-alpha.0",
+    "next": "14.2.3",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -24,7 +24,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.2",
+    "eslint-config-next": "14.2.3",
     "typescript": "^5"
   }
 }
