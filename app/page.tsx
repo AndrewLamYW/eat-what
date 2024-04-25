@@ -10,6 +10,7 @@ export default function Home() {
       sx={{
         alignItems: "center",
         display: "flex",
+        flex: 1,
         justifyContent: "center",
       }}
     >
