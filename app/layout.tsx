@@ -1,14 +1,9 @@
-import {
-  ClerkProvider,
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-} from "@clerk/nextjs";
+import { ClerkProvider } from "@clerk/nextjs";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
+import MainAppBar from "./components/main-app-bar";
 import theme from "./theme";
 
 export const metadata: Metadata = {
@@ -27,14 +22,7 @@ export default function RootLayout({
         <body
           style={{ height: "100%", display: "flex", flexDirection: "column" }}
         >
-          <header>
-            <SignedOut>
-              <SignInButton />
-            </SignedOut>
-            <SignedIn>
-              <UserButton />
-            </SignedIn>
-          </header>
+          <MainAppBar />
 
           <AppRouterCacheProvider>
             <CssVarsProvider theme={theme}>
