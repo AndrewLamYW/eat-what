@@ -6,22 +6,24 @@ import Typography from "@mui/material/Typography";
 
 export default function MainAppBar() {
   return (
-    <header>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            EatWhat
-          </Typography>
+    <AppBar color="inherit" sx={{ boxShadow: "none" }}>
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          EatWhat
+        </Typography>
 
-          <SignedOut>
-            <Button color="inherit">Sign in</Button>
-          </SignedOut>
+        <SignedOut>
+          <SignInButton>
+            <Button color="inherit" variant="outlined">
+              Sign in
+            </Button>
+          </SignInButton>
+        </SignedOut>
 
-          <SignedIn>
-            <UserButton />
-          </SignedIn>
-        </Toolbar>
-      </AppBar>
-    </header>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </Toolbar>
+    </AppBar>
   );
 }
