@@ -12,7 +12,7 @@ import type { Metadata } from "next";
 import theme from "./theme";
 
 export const metadata: Metadata = {
-  title: "Eat what?",
+  title: "EatWhat",
   description: "Let's gather energy together.",
 };
 
