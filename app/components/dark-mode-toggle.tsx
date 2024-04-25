@@ -3,7 +3,7 @@
 import Button from "@mui/material/Button";
 import { useColorScheme } from "@mui/material/styles";
 
-export default function ModeToggle() {
+export default function DarkModeToggle() {
   const { mode, setMode } = useColorScheme();
   return (
     <Button onClick={() => setMode(mode === "light" ? "dark" : "light")}>
