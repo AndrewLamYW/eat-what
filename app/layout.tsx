@@ -4,6 +4,7 @@ import CssBaseline from "@mui/material/CssBaseline";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
 import MainAppBar from "./components/main-app-bar";
+import "./global.css";
 import theme from "./theme";
 
 export const metadata: Metadata = {
@@ -18,16 +19,14 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en" style={{ height: "100%" }}>
-        <body
-          style={{ height: "100%", display: "flex", flexDirection: "column" }}
-        >
+      <html lang="en">
+        <body>
           <MainAppBar />
 
           <AppRouterCacheProvider>
             <CssVarsProvider theme={theme}>
               <CssBaseline enableColorScheme />
-              <main style={{ display: "flex", flex: 1 }}>{children}</main>
+              <main>{children}</main>
             </CssVarsProvider>
           </AppRouterCacheProvider>
         </body>
