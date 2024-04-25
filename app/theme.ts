@@ -1,7 +1,7 @@
 "use client";
 
 import { Roboto } from "next/font/google";
-import { experimental_extendTheme as extendTheme } from "@mui/material/styles";
+import { experimental_extendTheme as extendTheme, createTheme } from "@mui/material/styles";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -9,9 +9,23 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const theme = extendTheme({
+const defaultTheme = createTheme();
+
+const theme = extendTheme(defaultTheme, {
   typography: {
     fontFamily: roboto.style.fontFamily,
+    h1: {
+      fontSize: "3rem",
+      [defaultTheme.breakpoints.up("md")]: {
+        fontSize: "6rem",
+      },
+    },
+    h2: {
+      fontSize: "1.875rem",
+      [defaultTheme.breakpoints.up("md")]: {
+        fontSize: "3.75rem",
+      },
+    },
   },
 
   //   colorSchemes: {

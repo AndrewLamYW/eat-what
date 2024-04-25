@@ -1,12 +1,14 @@
 import { SignInButton } from "@clerk/nextjs";
-import Button from "@mui/material/Button";
+import Button, { ButtonProps } from "@mui/material/Button";
 
-export default function MainSignInButton() {
+export default function MainSignInButton({
+  buttonProps,
+}: {
+  buttonProps?: ButtonProps;
+}) {
   return (
     <SignInButton>
-      <Button color="inherit" variant="outlined">
-        Sign in
-      </Button>
+      <Button {...buttonProps}>Sign in</Button>
     </SignInButton>
   );
 }

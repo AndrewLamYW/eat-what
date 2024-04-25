@@ -18,15 +18,15 @@ export default function Home() {
       <SignedOut>
         <Container>
           <Typography variant="h1" gutterBottom>
-            Welcome to EatWhat
+            <b>EatWhat?</b>
           </Typography>
 
           <Typography variant="h2" gutterBottom>
-            Group meals without the drama 😉
+            What are we eating?
           </Typography>
 
           <Box>
-            <MainSignInButton />
+            <MainSignInButton buttonProps={{ variant: "contained" }} />
           </Box>
         </Container>
       </SignedOut>
