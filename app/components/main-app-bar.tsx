@@ -1,8 +1,8 @@
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import AppBar from "@mui/material/AppBar";
-import Button from "@mui/material/Button";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import MainSignInButton from "components/main-sign-in-button";
 
 export default function MainAppBar() {
   return (
@@ -13,11 +13,7 @@ export default function MainAppBar() {
         </Typography>
 
         <SignedOut>
-          <SignInButton>
-            <Button color="inherit" variant="outlined">
-              Sign in
-            </Button>
-          </SignInButton>
+          <MainSignInButton />
         </SignedOut>
 
         <SignedIn>

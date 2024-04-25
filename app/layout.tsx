@@ -1,4 +1,4 @@
-import { ClerkProvider } from "@clerk/nextjs";
+import { ClerkProvider, SignedIn } from "@clerk/nextjs";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
@@ -21,7 +21,9 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body>
-          <MainAppBar />
+          <SignedIn>
+            <MainAppBar />
+          </SignedIn>
 
           <AppRouterCacheProvider>
             <CssVarsProvider theme={theme}>
