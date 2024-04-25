@@ -6,6 +6,7 @@ import {
   UserButton,
 } from "@clerk/nextjs";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import CssBaseline from "@mui/material/CssBaseline";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
 import theme from "./theme";
@@ -22,8 +23,10 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
-        <body>
+      <html lang="en" style={{ height: "100%" }}>
+        <body
+          style={{ height: "100%", display: "flex", flexDirection: "column" }}
+        >
           <header>
             <SignedOut>
               <SignInButton />
@@ -35,7 +38,8 @@ export default function RootLayout({
 
           <AppRouterCacheProvider>
             <CssVarsProvider theme={theme}>
-              <main>{children}</main>
+              <CssBaseline enableColorScheme />
+              <main style={{ display: "flex", flex: 1 }}>{children}</main>
             </CssVarsProvider>
           </AppRouterCacheProvider>
         </body>
