@@ -1,7 +1,7 @@
 "use client";
 
 import Box from "@mui/material/Box";
-import PrivateHome from "./page-authenticated";
+import PrivateHome from "./private";
 import PublicHome from "./public";
 
 export default function Home() {
