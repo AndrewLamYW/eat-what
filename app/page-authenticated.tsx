@@ -15,7 +15,7 @@ export default function AuthenticatedHome() {
         <Card>
           <CardContent sx={{ p: { sm: 4, md: 5, textAlign: "center" } }}>
             <Typography variant="h2" gutterBottom>
-              <b>Let&apos;s eat together!</b>
+              <b>What are we eating?</b>
             </Typography>
 
             <Typography variant="subtitle1" sx={{ mb: 2 }}>

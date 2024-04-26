@@ -13,7 +13,7 @@ export default function UnauthenticatedHome() {
         </Typography>
 
         <Typography variant="h2" gutterBottom>
-          What are we eating?
+          Let&apos;s eat together!
         </Typography>
 
         <Box>
