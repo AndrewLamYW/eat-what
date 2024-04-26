@@ -1,5 +1,3 @@
-"use client";
-
 import PrivateHome from "@/app/ui/home/private";
 import PublicHome from "@/app/ui/home/public";
 import Box from "@mui/material/Box";
