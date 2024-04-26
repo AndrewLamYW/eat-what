@@ -2,7 +2,7 @@
 
 import Box from "@mui/material/Box";
 import AuthenticatedHome from "./page-authenticated";
-import UnauthenticatedHome from "./page-unauthenticated";
+import UnauthenticatedHome from "./public";
 
 export default function Home() {
   return (
