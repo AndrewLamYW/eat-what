@@ -1,8 +1,8 @@
 "use client";
 
 import Box from "@mui/material/Box";
-import AuthenticatedHome from "./page-authenticated";
-import UnauthenticatedHome from "./public";
+import PrivateHome from "./page-authenticated";
+import PublicHome from "./public";
 
 export default function Home() {
   return (
@@ -14,8 +14,8 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      <AuthenticatedHome />
-      <UnauthenticatedHome />
+      <PrivateHome />
+      <PublicHome />
     </Box>
   );
 }
