@@ -1,3 +1,4 @@
+import Logo from "@/app/ui/logo";
 import MainSignInButton from "@/app/ui/main-sign-in-button";
 import { SignedOut } from "@clerk/nextjs";
 import Box from "@mui/material/Box";
@@ -9,7 +10,7 @@ export default function UnauthenticatedHome() {
     <SignedOut>
       <Container>
         <Typography variant="h1" gutterBottom>
-          <b>EatWhat?</b>
+          <Logo />
         </Typography>
 
         <Typography variant="h2" gutterBottom>
