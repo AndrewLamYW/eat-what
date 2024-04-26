@@ -2,7 +2,7 @@ import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import MainSignInButton from "@/ui/main-sign-in-button";
+import MainSignInButton from "@/app/ui/main-sign-in-button";
 
 export default function MainAppBar() {
   return (
