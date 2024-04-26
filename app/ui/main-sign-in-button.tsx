@@ -7,7 +7,7 @@ export default function MainSignInButton({
   buttonProps?: ButtonProps;
 }) {
   return (
-    <SignInButton>
+    <SignInButton mode="modal">
       <Button {...buttonProps}>Sign in</Button>
     </SignInButton>
   );

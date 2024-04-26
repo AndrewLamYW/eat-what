@@ -1,8 +1,11 @@
-import PrivateHome from "@/app/ui/home/private";
-import PublicHome from "@/app/ui/home/public";
+import Logo from "@/app/ui/logo";
+import MainSignInButton from "@/app/ui/main-sign-in-button";
+import { SignedOut } from "@clerk/nextjs";
 import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 
-export default function Home() {
+export default function PublicHome() {
   return (
     <Box
       sx={{
@@ -12,8 +15,21 @@ export default function Home() {
         justifyContent: "center",
       }}
     >
-      <PrivateHome />
-      <PublicHome />
+      <SignedOut>
+        <Container>
+          <Typography variant="h1" gutterBottom>
+            <Logo />
+          </Typography>
+
+          <Typography variant="h2" gutterBottom>
+            Let&apos;s eat together!
+          </Typography>
+
+          <Box>
+            <MainSignInButton buttonProps={{ variant: "contained" }} />
+          </Box>
+        </Container>
+      </SignedOut>
     </Box>
   );
 }
