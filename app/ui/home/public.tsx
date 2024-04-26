@@ -1,8 +1,8 @@
+import MainSignInButton from "@/app/ui/main-sign-in-button";
 import { SignedOut } from "@clerk/nextjs";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import MainSignInButton from "./ui/main-sign-in-button";
 
 export default function UnauthenticatedHome() {
   return (
