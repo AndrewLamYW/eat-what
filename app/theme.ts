@@ -1,7 +1,10 @@
 "use client";
 
+import {
+  createTheme,
+  experimental_extendTheme as extendTheme,
+} from "@mui/material/styles";
 import { Roboto } from "next/font/google";
-import { experimental_extendTheme as extendTheme, createTheme } from "@mui/material/styles";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
