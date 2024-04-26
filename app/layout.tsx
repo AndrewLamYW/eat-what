@@ -8,7 +8,7 @@ import "./global.css";
 import theme from "./theme";
 
 export const metadata: Metadata = {
-  title: "EatWhat",
+  title: "EatWhat?",
   description: "Let's gather energy together.",
 };
 
