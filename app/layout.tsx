@@ -3,7 +3,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
-import MainAppBar from "./components/main-app-bar";
+import MainAppBar from "./ui/main-app-bar";
 import "./global.css";
 import theme from "./theme";
 
