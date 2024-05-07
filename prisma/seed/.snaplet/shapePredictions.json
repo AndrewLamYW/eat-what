@@ -1,0 +1,16 @@
+[
+  {
+    "schemaName": "public",
+    "tableName": "Session",
+    "predictions": [
+      {
+        "input": "public session title",
+        "column": "title",
+        "shape": "POST_TITLE",
+        "confidence": 0.3722303807735443,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
+  }
+]
