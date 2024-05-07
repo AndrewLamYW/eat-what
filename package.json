@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "seed": "prisma db seed",
+    "studio": "dotenv -c -- prisma studio",
     "migrate": "dotenv -c -- prisma migrate dev",
     "postmigrate": "dotenv -c -- npx @snaplet/seed --config prisma/seed/seed.config.ts sync"
   },
