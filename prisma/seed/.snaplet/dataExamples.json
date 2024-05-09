@@ -55,6 +55,10 @@
     ]
   },
   {
+    "shape": "STATUS",
+    "examples": []
+  },
+  {
     "input": "public session title",
     "examples": [
       "Summer BBQ Bash",

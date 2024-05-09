@@ -8,7 +8,15 @@ generator client {
 }
 
 model Session {
-    id        Int    @id @default(autoincrement())
+    id        Int           @id @default(autoincrement())
     title     String
     creatorId Int
+    status    SessionStatus @relation(fields: [statusId], references: [id])
+    statusId  Int
+}
+
+model SessionStatus {
+    id       Int       @id @default(autoincrement())
+    name     String
+    sessions Session[]
 }

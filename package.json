@@ -9,6 +9,7 @@
     "lint": "next lint",
     "seed": "prisma db seed",
     "studio": "dotenv -c -- prisma studio",
+    "reset": "dotenv -c -- prisma migrate reset --skip-seed",
     "migrate": "dotenv -c -- prisma migrate dev",
     "postmigrate": "dotenv -c -- npx @snaplet/seed --config prisma/seed/seed.config.ts sync"
   },
@@ -35,10 +36,9 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
     "prisma": "^5",
-    "ts-node": "^10",
     "typescript": "^5"
   },
   "prisma": {
-    "seed": "dotenv -c -- ts-node prisma/seed/seed.mjs"
+    "seed": "dotenv -c -- node prisma/seed/seed.mjs"
   }
 }

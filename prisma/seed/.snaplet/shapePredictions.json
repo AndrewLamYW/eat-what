@@ -12,5 +12,19 @@
         "confidenceContext": 0
       }
     ]
+  },
+  {
+    "schemaName": "public",
+    "tableName": "SessionStatus",
+    "predictions": [
+      {
+        "input": "public session_status name",
+        "column": "name",
+        "shape": "STATUS",
+        "confidence": 0.8454504013061523,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      }
+    ]
   }
 ]
