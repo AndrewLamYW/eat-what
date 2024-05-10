@@ -10,10 +10,10 @@
     "seed": "prisma db seed",
     "studio": "dotenv -c -- prisma studio",
     "reset": "dotenv -c -- prisma migrate reset --skip-seed",
-    "generate": "dotenv -c -- prisma generate",
+    "generate": "prisma generate",
     "migrate": "dotenv -c -- prisma migrate dev",
     "postmigrate": "dotenv -c -- npx @snaplet/seed --config prisma/seed/seed.config.ts sync",
-    "postinstall": "prisma generate"
+    "postinstall": "npm run generate"
   },
   "dependencies": {
     "@clerk/nextjs": "^5",
