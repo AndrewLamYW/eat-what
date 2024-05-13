@@ -41,7 +41,7 @@
           "id": "public.Session.creatorId",
           "name": "creatorId",
           "columnName": "creatorId",
-          "type": "int4",
+          "type": "text",
           "isRequired": true,
           "kind": "scalar",
           "isList": false,

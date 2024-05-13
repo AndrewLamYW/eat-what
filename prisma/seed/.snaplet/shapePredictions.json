@@ -4,6 +4,14 @@
     "tableName": "Session",
     "predictions": [
       {
+        "input": "public session creator_id",
+        "column": "creatorId",
+        "shape": "UUID",
+        "confidence": 0.9982240796089172,
+        "context": "GENERAL",
+        "confidenceContext": 0
+      },
+      {
         "input": "public session title",
         "column": "title",
         "shape": "POST_TITLE",

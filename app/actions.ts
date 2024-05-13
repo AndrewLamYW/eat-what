@@ -1,9 +1,13 @@
 "use server";
 
+import { diningSessionStatus } from "@/app/constants";
 import db from "@/app/lib/prisma";
+import { auth } from "@clerk/nextjs/server";
 import { revalidateTag } from "next/cache";
 
 export async function createSession(prevState: any, formData: FormData) {
+  const { userId } = auth();
+
   const rawFormData = {
     sessionTitle: formData.get("sessionTitle"),
   };
@@ -12,12 +16,20 @@ export async function createSession(prevState: any, formData: FormData) {
     throw new Error("Invalid type of session title");
   }
 
+  if (!userId) {
+    return {
+      data: null,
+      success: false,
+      message: "You must be signed in to create a session. 🚫",
+    };
+  }
+
   try {
     const createdSession = await db.session.create({
       data: {
         title: rawFormData.sessionTitle,
-        creatorId: 1,
-        statusId: 3,
+        creatorId: userId,
+        statusId: diningSessionStatus.active.id,
       },
     });
 

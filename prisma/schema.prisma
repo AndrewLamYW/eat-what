@@ -11,7 +11,7 @@ generator client {
 model Session {
     id        Int           @id @default(autoincrement())
     title     String
-    creatorId Int
+    creatorId String
     status    SessionStatus @relation(fields: [statusId], references: [id])
     statusId  Int
 }
