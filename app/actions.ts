@@ -13,14 +13,26 @@ export async function createSession(prevState: any, formData: FormData) {
   };
 
   if (typeof rawFormData.sessionTitle !== "string") {
-    throw new Error("Invalid type of session title");
+    return {
+      data: null,
+      success: false,
+      message: "Invalid type of session title",
+    };
+  }
+
+  if (!rawFormData.sessionTitle.length) {
+    return {
+      data: null,
+      success: false,
+      message: "Session title cannot be empty.",
+    };
   }
 
   if (!userId) {
     return {
       data: null,
       success: false,
-      message: "You must be signed in to create a session. 🚫",
+      message: "You must be signed in to create a session.",
     };
   }
 
