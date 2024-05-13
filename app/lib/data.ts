@@ -1,5 +1,15 @@
+import { auth } from "@clerk/nextjs/server";
 import db from "./prisma";
 
 export async function getDiningSessions() {
-  return db.session.findMany({ include: { status: true } });
+  const { userId } = auth();
+
+  if (!userId) {
+    throw new Error("You must be signed in to view dining sessions.");
+  }
+
+  return db.session.findMany({
+    where: { creatorId: userId },
+    include: { status: true },
+  });
 }
