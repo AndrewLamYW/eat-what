@@ -9,16 +9,34 @@ import Container from "@mui/material/Container";
 import Stack from "@mui/material/Stack";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { useFormState } from "react-dom";
 
-const initialState = {
+const titleInputMaxChars = 10;
+
+const initialState: { message?: string; success?: boolean; data?: unknown } = {
   message: "",
 };
 
 export default function CreateSessionForm() {
   const [formState, formAction] = useFormState(createSession, initialState);
   const [error, setError] = useState(false);
+
+  const handleTitleChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (e.target.value.length > titleInputMaxChars) setError(true);
+      else setError(false);
+    },
+    []
+  );
+
+  const titleHelperText = useMemo(
+    () =>
+      error
+        ? `Title length must not over ${titleInputMaxChars} characters.`
+        : "",
+    [error]
+  );
 
   return (
     <Container maxWidth="md" component="form" action={formAction}>
@@ -35,18 +53,28 @@ export default function CreateSessionForm() {
 
           <Stack spacing={4}>
             <TextField
-              label="Session Title"
-              variant="filled"
-              name="sessionTitle"
-              onChange={(e) =>
-                e.target.value.length > 100 ? setError(true) : setError(false)
-              }
               error={error}
-              helperText={error ? "Title is too long" : ""}
+              helperText={titleHelperText}
+              label="Session Title"
+              name="sessionTitle"
+              onChange={handleTitleChange}
+              variant="filled"
             />
 
+            {formState.message && (
+              <Typography
+                variant="body1"
+                sx={{
+                  color: formState.success ? "success.main" : "error.main",
+                }}
+                gutterBottom
+              >
+                {formState.message}
+              </Typography>
+            )}
+
             <Box>
-              <Button variant="contained" type="submit">
+              <Button variant="contained" type="submit" disabled={error}>
                 CREATE SESSION
               </Button>
             </Box>
