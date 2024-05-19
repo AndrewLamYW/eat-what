@@ -13,3 +13,16 @@ export async function getDiningSessions() {
     include: { status: true },
   });
 }
+
+export async function getDiningSessionDetails({ id }: { id: string }) {
+  const { userId } = auth();
+
+  if (!userId) {
+    throw new Error("You must be signed in to view dining sessions.");
+  }
+
+  return db.session.findUnique({
+    where: { id: Number(id) },
+    include: { status: true },
+  });
+}

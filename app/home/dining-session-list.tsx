@@ -1,4 +1,12 @@
+import Diversity3Icon from "@mui/icons-material/Diversity3";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import ListSubheader from "@mui/material/ListSubheader";
 import { Session, SessionStatus } from "@prisma/client";
+import Link from "next/link";
 
 export default function DiningSessionList({
   diningSessions,
@@ -7,14 +15,30 @@ export default function DiningSessionList({
 }) {
   return (
     <div>
-      <h2>Dining Sessions</h2>
-      <ul>
+      <List
+        subheader={
+          <ListSubheader component="div" id="nested-list-subheader">
+            Dining Sessions
+          </ListSubheader>
+        }
+      >
         {diningSessions.map((session) => (
-          <li key={session.id}>
-            {session.title} - {session.status.name}
-          </li>
+          <ListItem key={session.id}>
+            <ListItemButton
+              LinkComponent={Link}
+              href={`/sessions/${session.id}`}
+            >
+              <ListItemIcon>
+                <Diversity3Icon />
+              </ListItemIcon>
+
+              <ListItemText
+                primary={`${session.title} - ${session.status.name}`}
+              />
+            </ListItemButton>
+          </ListItem>
         ))}
-      </ul>
+      </List>
     </div>
   );
 }
