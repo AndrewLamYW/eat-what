@@ -1,8 +1,10 @@
 import Diversity3Icon from "@mui/icons-material/Diversity3";
+import Avatar from "@mui/material/Avatar";
+import Container from "@mui/material/Container";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
+import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import ListSubheader from "@mui/material/ListSubheader";
 import { Session, SessionStatus } from "@prisma/client";
@@ -14,7 +16,7 @@ export default function DiningSessionList({
   diningSessions: (Session & { status: SessionStatus })[];
 }) {
   return (
-    <div>
+    <Container>
       <List
         subheader={
           <ListSubheader component="div" id="nested-list-subheader">
@@ -28,17 +30,20 @@ export default function DiningSessionList({
               LinkComponent={Link}
               href={`/sessions/${session.id}`}
             >
-              <ListItemIcon>
-                <Diversity3Icon />
-              </ListItemIcon>
+              <ListItemAvatar>
+                <Avatar>
+                  <Diversity3Icon />
+                </Avatar>
+              </ListItemAvatar>
 
               <ListItemText
-                primary={`${session.title} - ${session.status.name}`}
+                primary={session.title}
+                secondary={session.status.name}
               />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
-    </div>
+    </Container>
   );
 }
