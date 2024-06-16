@@ -1,15 +1,17 @@
+import LocalizationProvider from "@/app/localization-provider";
 import { ClerkProvider, SignedIn } from "@clerk/nextjs";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import CssBaseline from "@mui/material/CssBaseline";
-import { Experimental_CssVarsProvider as CssVarsProvider } from "@mui/material/styles";
+import { CssVarsProvider } from "@mui/material/styles";
 import type { Metadata } from "next";
-import MainAppBar from "./ui/main-app-bar";
 import "./global.css";
 import theme from "./theme";
+import MainAppBar from "./ui/main-app-bar";
 
 export const metadata: Metadata = {
-  title: "EatWhat?",
   description: "Let's gather energy together.",
+  metadataBase: new URL("https://eatwhat.app"),
+  title: "EatWhat?",
 };
 
 export default function RootLayout({
@@ -28,7 +30,9 @@ export default function RootLayout({
           <AppRouterCacheProvider>
             <CssVarsProvider theme={theme}>
               <CssBaseline enableColorScheme />
-              <main>{children}</main>
+              <LocalizationProvider>
+                <main>{children}</main>
+              </LocalizationProvider>
             </CssVarsProvider>
           </AppRouterCacheProvider>
         </body>
